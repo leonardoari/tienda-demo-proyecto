@@ -1,0 +1,217 @@
+/* ===== BODY Y NAVBAR ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #eef1f5;
+  transition: .3s;
+}
+
+.navbar {
+  background: #4a90e2;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.navbar input {
+  width: 33%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.navbar nav a {
+  margin-left: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.navbar button {
+  margin-left:12px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+.grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===== TARJETAS DE PRODUCTO ===== */
+.card {
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  padding-bottom:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.12);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+  height:auto;
+  position:relative;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.18);
+}
+
+.card img {
+  width:100%;
+  height:170px;
+  object-fit:contain;
+  background:#f5f5f5;
+  cursor:pointer;
+}
+
+.card h3 {
+  font-size:16px;
+  margin:8px 12px 4px;
+  color:#222;
+}
+
+.card p {
+  font-size:13px;
+  margin:0 12px 6px;
+  color:#555;
+}
+
+.card .precio {
+  font-size:15px;
+  font-weight:700;
+  color:#2962ff;
+  margin:0 12px 8px;
+}
+
+.card-buttons {
+  display:flex;
+  gap:6px;
+  padding:0 12px;
+  margin-bottom:8px;
+}
+
+.btn {
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight:600;
+  transition: .2s;
+}
+
+.btn-primary { background:#2962ff; color:white; }
+.btn-primary:hover { background:#0039cb; }
+
+.btn-heart { background:#ff1744; color:white; }
+.btn-heart:hover { background:#d50000; }
+
+.btn-volver { background:#757575; color:white; }
+.btn-volver:hover { background:#424242; }
+
+.btn-pago { background:#43a047; color:white; }
+.btn-pago:hover { background:#2e7d32; }
+
+/* ===== FORMULARIOS ===== */
+.form-box {
+  background: white;
+  padding: 25px;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+}
+
+/* ===== NOTIFICACIONES ===== */
+.notificacion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4a90e2;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: show .3s forwards, hide .3s 2s forwards;
+  font-weight: 600;
+}
+
+@keyframes show { to { opacity: 1; transform: translateY(0); } }
+@keyframes hide { to { opacity: 0; transform: translateY(20px); } }
+
+/* ===== MODAL IMAGEN ===== */
+.modal { display: none; position: fixed; z-index: 999; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+.modal-contenido { margin: auto; display: block; max-width: 80%; max-height: 80%; border-radius: 12px; }
+.cerrar { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+.cerrar:hover { color: #bbb; }
+
+/* ===== VISTA PRODUCTO DETALLE ===== */
+.producto-detalle { display: flex; flex-wrap: wrap; justify-content: center; margin: 20px; gap: 20px; }
+.producto-detalle img { width: 300px; height: 300px; object-fit: contain; border-radius: 12px; cursor:pointer; }
+.producto-detalle div { max-width: 400px; }
+.producto-detalle h2 { font-size: 22px; margin-bottom: 10px; }
+.producto-detalle p { font-size: 16px; margin-bottom: 8px; }
+.producto-detalle .precio { font-size: 18px; font-weight: bold; color: #2962ff; margin-bottom: 12px; }
+
+/* ===== CARRUSEL ===== */
+.carousel { position: relative; width: 100%; overflow: hidden; border-radius: 12px; }
+.carousel img { width: 100%; height: 300px; object-fit: contain; display: none; }
+.carousel img.active { display: block; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: white; border: none; padding: 4px 10px; cursor: pointer; font-size: 16px; border-radius: 6px; }
+.carousel-btn.left { left: 6px; }
+.carousel-btn.right { right: 6px; }
+
+/* ===== ETIQUETAS ===== */
+.etiqueta { position: absolute; top: 8px; left: 8px; background: #ff1744; color: white; font-size: 12px; font-weight: bold; padding: 4px 6px; border-radius: 6px; z-index: 10; }
+.envio { background: #43a047 !important; }
+
+/* ===== ESTRELLAS ===== */
+.stars { color: #fbc02d; margin: 4px 12px; font-size: 14px; }
+
+/*------------------------------------------------------------
+  /* ANIMACIÓN PRODUCTOS FILTRADOS */
+.card {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.card.hide {
+  opacity: 0;
+  transform: scale(.8);
+  pointer-events: none;
+}
+
+.sin-resultados {
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: #444;
+  animation: fade .4s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

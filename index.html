@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Leo Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">LeoStore</div>
+  <input type="text" id="buscarInput" placeholder="Buscar productos...">
+  <nav>
+    <a id="btnInicio">Inicio</a>
+    <a id="btnFavoritos">Favoritos</a>
+    <a id="btnCarrito">Carrito</a>
+    <a id="btnHistorial">Mis Compras</a>
+    <a id="btnLogin">Login</a>
+    <a id="btnCerrar" style="display:none;">Cerrar</a>
+    <button id="modoBtn">🌙</button>
+  </nav>
+</header>
+
+<main id="contenido"></main>
+
+<!-- Modal de imagen -->
+<div id="modalImg" class="modal" onclick="cerrarModal()">
+  <span class="cerrar">&times;</span>
+  <img class="modal-contenido" id="imgModal">
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
